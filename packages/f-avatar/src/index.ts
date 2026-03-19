@@ -1,1 +1,1 @@
-export * from './lib/f-avatar/f-avatar';
+export { FAvatar } from './lib/f-avatar/f-avatar';

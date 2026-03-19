@@ -55,25 +55,22 @@
 - [x] f-data-view (triple view toggle: table/list/grid, auto-switch to list on mobile)
 - [x] [I] f-pagination (page buttons, size selector, showing X-Y of Z — rewritten from scratch, Bootstrap pagination)
 
-## Batch 5 — List + Grid + Card (17)
-- [ ] f-list (includes f-list-item, f-list-title, etc.)
-- [ ] f-grid (includes f-grid-body, f-grid-button, etc.)
-- [ ] f-card (includes f-card-body, f-card-title, etc.)
+## Batch 5 — List + Grid + Card (18) ✅ COMPLETE
+- [x] f-list (7 components: FList, FListItem, FListTitle, FListSubtitle, FListBody, FListThumbnail, FListButton)
+- [x] f-grid (4 components: FGrid, FGridBody, FGridThumbnail, FGridButton)
+- [x] f-card (7 components: FCard, FCardBody, FCardTitle, FCardSubtitle, FCardThumbnail, FCardButton, FCardCounter)
 
-## Batch 6 — Modal (4) + App Layout (5)
-- [ ] f-modal (includes f-modal-header, f-modal-body, f-modal-footer)
-- [ ] f-app (includes f-app, f-title, f-breadcrumb)
-- [ ] f-icon
+## Batch 6 — Modal (4) + App Layout (5) ✅ COMPLETE
+- [x] f-modal (4 components: FModalHeader, FModalTitle, FModalBody, FModalFooter)
+- [x] f-app (4 components: FApp, FTitle, FBreadcrumb, FBreadcrumbItem)
+- [x] f-icon (1 component: FIcon with name/size/color)
 
-## Batch 7 — Utilities
-- [ ] f-alert
-- [ ] f-loader
-- [ ] f-avatar (already exists — enhance with real logic)
-- [ ] f-img
-- [ ] f-tooltip
-- [ ] f-tab-sliding
-- [ ] skeleton-loader / page-loader
-- [ ] data-not-found
+## Batch 7 — Utilities ✅ COMPLETE
+- [x] f-alert (dismissible alerts with type: info/success/warning/danger)
+- [x] f-loader (spinner with overlay mode, configurable size/color/text)
+- [x] [I] f-avatar (REWROTE: image or auto-generated initials with hue-based background color)
+- [x] f-tooltip (Bootstrap tooltip wrapper)
+- [S] f-img, f-tab-sliding, skeleton-loader, data-not-found — deferred to Phase 2
 
 ## Batch 8 — @fxcode/ui Umbrella + npm Config
 - [ ] @fxcode/ui package (re-exports all components)

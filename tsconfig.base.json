@@ -35,7 +35,16 @@
       "@fxcode/f-layout": ["packages/f-layout/src/index.ts"],
       "@fxcode/f-table": ["packages/f-table/src/index.ts"],
       "@fxcode/f-data-view": ["packages/f-data-view/src/index.ts"],
-      "@fxcode/f-pagination": ["packages/f-pagination/src/index.ts"]
+      "@fxcode/f-pagination": ["packages/f-pagination/src/index.ts"],
+      "@fxcode/f-list": ["packages/f-list/src/index.ts"],
+      "@fxcode/f-grid": ["packages/f-grid/src/index.ts"],
+      "@fxcode/f-card": ["packages/f-card/src/index.ts"],
+      "@fxcode/f-modal": ["packages/f-modal/src/index.ts"],
+      "@fxcode/f-app": ["packages/f-app/src/index.ts"],
+      "@fxcode/f-icon": ["packages/f-icon/src/index.ts"],
+      "@fxcode/f-alert": ["packages/f-alert/src/index.ts"],
+      "@fxcode/f-loader": ["packages/f-loader/src/index.ts"],
+      "@fxcode/f-tooltip": ["packages/f-tooltip/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
