@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@fxcode/f-avatar": ["packages/f-avatar/src/index.ts"],
+      "@fxcode/f-core": ["packages/f-core/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

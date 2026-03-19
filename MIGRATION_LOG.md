@@ -15,12 +15,18 @@
 
 ---
 
-## Batch 1 — Workspace Setup
+## Batch 1 — Workspace Setup + Core Foundation
 - [x] CLAUDE.md created
 - [x] MIGRATION_LOG.md created
-- [ ] Verify Nx workspace config
-- [ ] Update Angular peer deps to 19+
-- [ ] Create @fxcode/ui umbrella package scaffold
+- [x] Verify Nx workspace config (Angular 21.2 workspace, packages publish as Angular-version-agnostic)
+- [x] @fxcode/f-core package created — shared foundation for all components:
+  - [x] Device utility (isMobile, isDesktop, isTouchDevice)
+  - [x] Storage utility (localStorage wrapper with JSON serialization)
+  - [x] ThemeService (dark/light mode, sidebar, template size, CSS property reader)
+  - [x] AutoDestroyable (improved: uses takeUntil pattern instead of property iteration)
+  - [x] BaseInput + BaseTextInput (ControlValueAccessor, pattern filtering, autocapitalize, enter key navigation)
+  - [x] Types (InputType, PatternRef, ButtonHelper, etc.)
+  - [x] Build verified: `nx build f-core` passes
 
 ## Batch 2 — Form Inputs (13 core components)
 - [ ] f-input-text
@@ -96,7 +102,13 @@
 
 | Component | Change | Reason |
 |-----------|--------|--------|
-| (will be filled as migration progresses) | | |
+| AutoDestroyable | Rewrote GC logic — uses `takeUntil(destroy$)` pattern instead of iterating all properties and calling `delete`. Standard Angular approach, more performant. | Original iterated every property on the class calling .unsubscribe/.complete, tried window.gc(), etc. New version uses Subject-based destroy signal. |
+| BaseInput | Removed `@Injectable({ providedIn: 'root' })` from directives | Directives don't need Injectable — it caused unnecessary singleton registration. |
+| BaseInput | Removed `console.log` debug statements | Production library shouldn't log to console. |
+| BaseInput | Simplified `onKeyEnter` | Removed select2-specific DOM manipulation — that's app-specific, not library-level. |
+| BaseTextInput | Merged 3-class chain into 2 | `FBaseInputTextAutoCorrect` merged into `BaseTextInput` — autocorrect/autocapitalize are standard text input features, not a separate layer. |
+| ThemeService | Uses BehaviorSubject instead of Subject | Consumers get the current value immediately on subscribe, not just future changes. |
+| Types | Fixed `datetime` → `datetime-local` | HTML spec uses `datetime-local`, not `datetime`. |
 
 ---
 
