@@ -29,7 +29,10 @@
       "@fxcode/f-input-switch": ["packages/f-input-switch/src/index.ts"],
       "@fxcode/f-input-search": ["packages/f-input-search/src/index.ts"],
       "@fxcode/f-input-file": ["packages/f-input-file/src/index.ts"],
-      "@fxcode/f-input-money": ["packages/f-input-money/src/index.ts"]
+      "@fxcode/f-input-money": ["packages/f-input-money/src/index.ts"],
+      "@fxcode/f-form": ["packages/f-form/src/index.ts"],
+      "@fxcode/f-button": ["packages/f-button/src/index.ts"],
+      "@fxcode/f-layout": ["packages/f-layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

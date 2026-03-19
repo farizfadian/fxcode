@@ -44,10 +44,11 @@
 - [x] f-input-money (currency formatting with thousand separators)
 - [x] All 14 packages build verified (f-core + 13 inputs)
 
-## Batch 3 — Form Layout (5) + Layout (6)
-- [ ] f-form (includes f-form-row, f-form-group, f-form-row-divider, f-label)
-- [ ] f-button
-- [ ] f-layout (includes f-row, f-col, f-header, f-body, f-container, f-section)
+## Batch 3 — Form Layout (5) + Layout (6) ✅ COMPLETE
+- [x] [I] f-form (FFormRow, FFormGroup, FFormRowDivider, FLabel — colClasses computed getter replaces 48-line ngClass)
+- [x] [I] f-button (theme, icon, loading spinner, circle mode — simplified from original, removed jQuery/FIconService deps)
+- [x] [I] f-layout (FRow, FCol, FHeader, FBody, FSection, FContainer — all inline templates, computed colClasses)
+- [x] All 3 packages build verified
 
 ## Batch 4 — Table + Data View (3)
 - [ ] f-table (includes f-table-responsive, f-table-default, f-table-dynamic)

@@ -1,0 +1,16 @@
+<button
+  [type]="type"
+  [ngClass]="btnClasses"
+  [class]="cssClass"
+  [disabled]="disabled || loading"
+  [attr.tabindex]="tabIndex || null"
+  [attr.title]="tooltip || null"
+  (click)="handleClick()">
+  @if (loading) {
+    <span class="spinner-border spinner-border-sm" [class.mr-1]="label"></span>
+  } @else if (icon) {
+    <i [class]="icon" [class.mr-1]="label"></i>
+  }
+  @if (label) { {{ label }} }
+  <ng-content></ng-content>
+</button>
