@@ -1,0 +1,26 @@
+// shared input styles
+.f-input-wrapper { position: relative; }
+
+.f-input-wrapper .form-control { padding-left: 2.375rem; }
+.f-input-wrapper .form-control.no-icon { padding: .375rem .75rem; }
+
+.f-input-wrapper .icon-left {
+  position: absolute; z-index: 2; display: block;
+  width: 2.375rem; height: 2.375rem; line-height: 2.375rem;
+  text-align: center; pointer-events: none; color: #aaa;
+}
+
+.f-input-wrapper .icon-wrapper {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+}
+
+.f-input-wrapper .icon-right {
+  display: inline; padding: 2px; font-size: 16px; color: #aaa; cursor: pointer;
+  &:hover { color: #333; }
+}
+
+.f-input-wrapper .has-icon-right { padding-right: 28px; }
+
+.form-control.is-invalid { background-image: none !important; }
+
+input::-ms-reveal, input::-ms-clear { display: none; }

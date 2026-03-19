@@ -1,0 +1,58 @@
+<span class="f-input-wrapper">
+  @if (label) {
+    <label [attr.for]="id">{{ label }}</label>
+  }
+  @if (mode === 'input') {
+    @if (icon) {
+      <i [class]="icon" class="icon-left btn-icon"></i>
+    }
+    <input
+      [type]="type"
+      [id]="id"
+      [class]="class"
+      [class.form-control]="!class"
+      [class.is-invalid]="!isValid && value"
+      [class.form-control-sm]="size === 'sm'"
+      [class.form-control-lg]="size === 'lg'"
+      [class.no-icon]="!icon"
+      [class.has-icon-right]="allowClear"
+      [value]="value"
+      [disabled]="disabled"
+      [tabIndex]="tabIndex"
+      [maxLength]="maxLength"
+      [attr.readonly]="readonly || null"
+      [attr.placeholder]="placeholder || null"
+      [attr.autocomplete]="autocomplete"
+      [attr.autocorrect]="autocorrect"
+      [attr.spellcheck]="spellcheck"
+      [attr.lang]="lang"
+      [attr.autocapitalize]="autocapitalize"
+      [attr.pattern]="pattern || null"
+      [attr.list]="dataList?.length ? id + '_datalist' : null"
+      (keydown.enter)="onKeyEnter($event)"
+      (input)="filterInput($event.target)"
+      (blur)="onBlur($event.target)"
+      (paste)="onPaste($event, $event.target)"
+    />
+    <span class="icon-wrapper">
+      @for (btn of buttons; track btn.id) {
+        <i [class]="btn.icon" class="icon-right btn-icon" [title]="btn.tooltip || ''" (click)="onButtonClicked.emit(btn)"></i>
+      }
+      @if (allowClear && value) {
+        <i class="bi bi-x-circle-fill icon-right btn-icon" (click)="clearText()"></i>
+      }
+    </span>
+    @if (!isValid && invalidFeedback && value) {
+      <div class="invalid-feedback d-block">{{ invalidFeedback }}</div>
+    }
+    @if (dataList?.length) {
+      <datalist [id]="id + '_datalist'">
+        @for (item of dataList; track item) {
+          <option [value]="item"></option>
+        }
+      </datalist>
+    }
+  } @else {
+    <div [innerHTML]="value"></div>
+  }
+</span>

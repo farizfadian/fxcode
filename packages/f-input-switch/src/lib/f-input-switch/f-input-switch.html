@@ -1,0 +1,20 @@
+<div class="custom-control custom-switch">
+  @if (mode === 'input') {
+    <input
+      type="checkbox"
+      class="custom-control-input"
+      [id]="id"
+      [checked]="value"
+      [disabled]="disabled"
+      [tabIndex]="tabIndex"
+      [attr.readonly]="readonly || null"
+      (change)="onSwitchChange($event.target)"
+    />
+    <label class="custom-control-label" [attr.for]="id">{{ label }}</label>
+    @if (!isValid && invalidFeedback) {
+      <div class="invalid-feedback d-block">{{ invalidFeedback }}</div>
+    }
+  } @else {
+    <span>{{ value ? 'On' : 'Off' }}</span>
+  }
+</div>

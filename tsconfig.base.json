@@ -16,7 +16,20 @@
     "baseUrl": ".",
     "paths": {
       "@fxcode/f-avatar": ["packages/f-avatar/src/index.ts"],
-      "@fxcode/f-core": ["packages/f-core/src/index.ts"]
+      "@fxcode/f-core": ["packages/f-core/src/index.ts"],
+      "@fxcode/f-input-text": ["packages/f-input-text/src/index.ts"],
+      "@fxcode/f-input-password": ["packages/f-input-password/src/index.ts"],
+      "@fxcode/f-input-email": ["packages/f-input-email/src/index.ts"],
+      "@fxcode/f-input-number": ["packages/f-input-number/src/index.ts"],
+      "@fxcode/f-input-date": ["packages/f-input-date/src/index.ts"],
+      "@fxcode/f-input-tel": ["packages/f-input-tel/src/index.ts"],
+      "@fxcode/f-select": ["packages/f-select/src/index.ts"],
+      "@fxcode/f-textarea": ["packages/f-textarea/src/index.ts"],
+      "@fxcode/f-input-checkbox": ["packages/f-input-checkbox/src/index.ts"],
+      "@fxcode/f-input-switch": ["packages/f-input-switch/src/index.ts"],
+      "@fxcode/f-input-search": ["packages/f-input-search/src/index.ts"],
+      "@fxcode/f-input-file": ["packages/f-input-file/src/index.ts"],
+      "@fxcode/f-input-money": ["packages/f-input-money/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

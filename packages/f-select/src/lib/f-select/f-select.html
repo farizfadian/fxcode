@@ -1,0 +1,32 @@
+<span class="f-select-wrapper">
+  @if (label) {
+    <label [attr.for]="id">{{ label }}</label>
+  }
+  @if (mode === 'input') {
+    <select
+      [id]="id"
+      [class]="class"
+      [class.form-control]="!class"
+      [class.is-invalid]="!isValid && value"
+      [class.form-control-sm]="size === 'sm'"
+      [class.form-control-lg]="size === 'lg'"
+      [disabled]="disabled"
+      [tabIndex]="tabIndex"
+      [attr.readonly]="readonly || null"
+      (change)="onSelectChange($event.target)"
+      (keydown.enter)="onKeyEnter($event)"
+    >
+      @if (showEmpty) {
+        <option value="">{{ emptyLabel }}</option>
+      }
+      @for (opt of options; track opt.value) {
+        <option [value]="opt.value" [selected]="value === opt.value || value === '' + opt.value">{{ opt.label }}</option>
+      }
+    </select>
+    @if (!isValid && invalidFeedback && value) {
+      <div class="invalid-feedback d-block">{{ invalidFeedback }}</div>
+    }
+  } @else {
+    <div [innerHTML]="value"></div>
+  }
+</span>

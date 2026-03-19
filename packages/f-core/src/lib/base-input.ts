@@ -107,7 +107,7 @@ export abstract class BaseInput<T = string>
 
   // --- Enter key handler ---
 
-  onKeyEnter(event: KeyboardEvent): void {
+  onKeyEnter(event: Event): void {
     const tag = (event.target as HTMLElement).tagName.toLowerCase();
 
     if (this.value) {
@@ -178,16 +178,18 @@ export abstract class BaseTextInput<T = string> extends BaseInput<T> {
     }
   }
 
-  protected onBlur(inputElement: HTMLInputElement): void {
-    this.handleInputChange(inputElement.value.trim() as unknown as T);
+  protected onBlur(target: EventTarget | null): void {
+    const el = target as HTMLInputElement;
+    if (el) this.handleInputChange(el.value.trim() as unknown as T);
   }
 
-  protected onPaste(event: ClipboardEvent, inputElement: HTMLInputElement): void {
+  protected onPaste(event: ClipboardEvent, target: EventTarget | null): void {
     event.preventDefault();
+    const el = target as HTMLInputElement;
     const text = event.clipboardData?.getData('text/plain');
-    if (text) {
-      inputElement.value = text.normalize();
-      this.filterInput(inputElement);
+    if (text && el) {
+      el.value = text.normalize();
+      this.filterInput(el);
       this.onKeyupPaste.emit(this.value!);
     }
   }
@@ -198,11 +200,13 @@ export abstract class BaseTextInput<T = string> extends BaseInput<T> {
     this.handleInputChange('' as unknown as T);
   }
 
-  protected filterInput(inputElement: HTMLInputElement): void {
-    if ((this.value as unknown) === inputElement.value) return;
-    this.filterByRegex(inputElement);
-    this.filterCapitalize(inputElement);
-    this.handleInputChange(inputElement.value as unknown as T);
+  protected filterInput(target: EventTarget | HTMLInputElement | null): void {
+    const el = target as HTMLInputElement;
+    if (!el) return;
+    if ((this.value as unknown) === el.value) return;
+    this.filterByRegex(el);
+    this.filterCapitalize(el);
+    this.handleInputChange(el.value as unknown as T);
   }
 
   private filterByRegex(el: HTMLInputElement): void {

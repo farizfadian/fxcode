@@ -1,0 +1,43 @@
+<span class="f-input-wrapper f-input-money">
+  @if (label) {
+    <label [attr.for]="id">{{ label }}</label>
+  }
+  @if (mode === 'input') {
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span
+          class="input-group-text"
+          [class.input-group-text-sm]="size === 'sm'"
+          [class.input-group-text-lg]="size === 'lg'"
+        >{{ currency }}</span>
+      </div>
+      <input
+        type="text"
+        [id]="id"
+        [class]="class"
+        [class.form-control]="!class"
+        [class.is-invalid]="!isValid && value"
+        [class.form-control-sm]="size === 'sm'"
+        [class.form-control-lg]="size === 'lg'"
+        [class.text-right]="true"
+        [value]="displayValue"
+        [disabled]="disabled"
+        [tabIndex]="tabIndex"
+        [maxLength]="maxLength"
+        [attr.readonly]="readonly || null"
+        [attr.placeholder]="placeholder || '0'"
+        [attr.autocomplete]="'off'"
+        [attr.inputmode]="'numeric'"
+        (keydown.enter)="onKeyEnter($event)"
+        (input)="filterInput($event.target)"
+        (blur)="onBlur($event.target)"
+        (paste)="onPaste($event, $event.target)"
+      />
+    </div>
+    @if (!isValid && invalidFeedback && value) {
+      <div class="invalid-feedback d-block">{{ invalidFeedback }}</div>
+    }
+  } @else {
+    <div class="text-right">{{ currency }} {{ displayValue }}</div>
+  }
+</span>

@@ -28,20 +28,21 @@
   - [x] Types (InputType, PatternRef, ButtonHelper, etc.)
   - [x] Build verified: `nx build f-core` passes
 
-## Batch 2 — Form Inputs (13 core components)
-- [ ] f-input-text
-- [ ] f-input-password
-- [ ] f-input-email
-- [ ] f-input-number
-- [ ] f-input-date
-- [ ] f-input-tel
-- [ ] f-select
-- [ ] f-textarea
-- [ ] f-input-checkbox
-- [ ] f-input-switch
-- [ ] f-input-search
-- [ ] f-input-file
-- [ ] f-input-money
+## Batch 2 — Form Inputs (13 core components) ✅ COMPLETE
+- [x] f-input-text (reference template for all text inputs)
+- [x] f-input-password (show/hide toggle)
+- [x] f-input-email (domain auto-suggestion: gmail, yahoo, outlook, etc.)
+- [x] f-input-number (text-align right, number-only filtering)
+- [x] f-input-date (type=date, native browser date picker)
+- [x] f-input-tel (type=tel, phone pattern filtering)
+- [x] f-select (dropdown with SelectOption interface)
+- [x] f-textarea (multi-line, configurable rows)
+- [x] f-input-checkbox (Bootstrap custom-control checkbox)
+- [x] f-input-switch (Bootstrap custom-control switch)
+- [x] f-input-search (debounced search with clear icon)
+- [x] f-input-file (file upload with accept/multiple)
+- [x] f-input-money (currency formatting with thousand separators)
+- [x] All 14 packages build verified (f-core + 13 inputs)
 
 ## Batch 3 — Form Layout (5) + Layout (6)
 - [ ] f-form (includes f-form-row, f-form-group, f-form-row-divider, f-label)

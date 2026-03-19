@@ -1,0 +1,33 @@
+<span class="f-file-wrapper">
+  @if (label) {
+    <label [attr.for]="id">{{ label }}</label>
+  }
+  @if (mode === 'input') {
+    <div class="custom-file">
+      <input
+        type="file"
+        class="custom-file-input"
+        [id]="id"
+        [disabled]="disabled"
+        [tabIndex]="tabIndex"
+        [attr.accept]="accept || null"
+        [attr.multiple]="multiple || null"
+        (change)="onFileChange($event.target)"
+      />
+      <label class="custom-file-label" [attr.for]="id">
+        {{ fileNames || placeholder || 'Choose file...' }}
+      </label>
+    </div>
+    @if (selectedFiles.length) {
+      <small class="text-muted mt-1 d-block">
+        {{ selectedFiles.length }} file(s) selected
+        <i class="bi bi-x-circle-fill btn-icon ml-1" style="cursor: pointer; color: #aaa;" (click)="clearFiles()"></i>
+      </small>
+    }
+    @if (!isValid && invalidFeedback) {
+      <div class="invalid-feedback d-block">{{ invalidFeedback }}</div>
+    }
+  } @else {
+    <div>{{ fileNames || '-' }}</div>
+  }
+</span>

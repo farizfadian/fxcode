@@ -1,0 +1,8 @@
+.f-textarea-wrapper { position: relative; display: block; }
+
+.f-textarea-wrapper textarea.form-control {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-control.is-invalid { background-image: none !important; }

@@ -1,0 +1,38 @@
+<span class="f-input-wrapper">
+  @if (label) {
+    <label [attr.for]="id">{{ label }}</label>
+  }
+  @if (mode === 'input') {
+    @if (icon) {
+      <i [class]="icon" class="icon-left btn-icon"></i>
+    }
+    <input
+      [type]="type"
+      [id]="id"
+      [class]="class"
+      [class.form-control]="!class"
+      [class.form-control-sm]="size === 'sm'"
+      [class.form-control-lg]="size === 'lg'"
+      [class.has-icon-right]="allowClear"
+      [value]="value"
+      [disabled]="disabled"
+      [tabIndex]="tabIndex"
+      [maxLength]="maxLength"
+      [attr.readonly]="readonly || null"
+      [attr.placeholder]="placeholder || 'Search...'"
+      [attr.autocomplete]="autocomplete"
+      [attr.autocorrect]="autocorrect"
+      [attr.spellcheck]="spellcheck"
+      (keydown.enter)="onKeyEnter($event)"
+      (input)="filterInput($event.target)"
+      (blur)="onBlur($event.target)"
+    />
+    <span class="icon-wrapper">
+      @if (allowClear && value) {
+        <i class="bi bi-x-circle-fill icon-right btn-icon" (click)="clearText()"></i>
+      }
+    </span>
+  } @else {
+    <div [innerHTML]="value"></div>
+  }
+</span>

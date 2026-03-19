@@ -1,0 +1,34 @@
+<span class="f-textarea-wrapper">
+  @if (label) {
+    <label [attr.for]="id">{{ label }}</label>
+  }
+  @if (mode === 'input') {
+    <textarea
+      [id]="id"
+      [class]="class"
+      [class.form-control]="!class"
+      [class.is-invalid]="!isValid && value"
+      [class.form-control-sm]="size === 'sm'"
+      [class.form-control-lg]="size === 'lg'"
+      [rows]="rows"
+      [disabled]="disabled"
+      [tabIndex]="tabIndex"
+      [maxLength]="maxLength"
+      [attr.readonly]="readonly || null"
+      [attr.placeholder]="placeholder || null"
+      [attr.autocomplete]="autocomplete"
+      [attr.autocorrect]="autocorrect"
+      [attr.spellcheck]="spellcheck"
+      [attr.lang]="lang"
+      [attr.autocapitalize]="autocapitalize"
+      (input)="filterInput($event.target)"
+      (blur)="onBlur($event.target)"
+      (paste)="onPaste($event, $event.target)"
+    >{{ value }}</textarea>
+    @if (!isValid && invalidFeedback && value) {
+      <div class="invalid-feedback d-block">{{ invalidFeedback }}</div>
+    }
+  } @else {
+    <div [innerHTML]="value"></div>
+  }
+</span>
