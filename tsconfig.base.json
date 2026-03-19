@@ -44,7 +44,8 @@
       "@fxcode/f-icon": ["packages/f-icon/src/index.ts"],
       "@fxcode/f-alert": ["packages/f-alert/src/index.ts"],
       "@fxcode/f-loader": ["packages/f-loader/src/index.ts"],
-      "@fxcode/f-tooltip": ["packages/f-tooltip/src/index.ts"]
+      "@fxcode/f-tooltip": ["packages/f-tooltip/src/index.ts"],
+      "@fxcode/ui": ["packages/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

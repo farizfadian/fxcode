@@ -1,0 +1,20 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/packages/ui",
+  "lib": {
+    "entryFile": "src/index.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "@fxcode/f-core",
+    "@fxcode/f-input-text", "@fxcode/f-input-password", "@fxcode/f-input-email",
+    "@fxcode/f-input-number", "@fxcode/f-input-date", "@fxcode/f-input-tel",
+    "@fxcode/f-select", "@fxcode/f-textarea",
+    "@fxcode/f-input-checkbox", "@fxcode/f-input-switch", "@fxcode/f-input-search",
+    "@fxcode/f-input-file", "@fxcode/f-input-money",
+    "@fxcode/f-form", "@fxcode/f-button", "@fxcode/f-layout",
+    "@fxcode/f-table", "@fxcode/f-data-view", "@fxcode/f-pagination",
+    "@fxcode/f-list", "@fxcode/f-grid", "@fxcode/f-card",
+    "@fxcode/f-modal", "@fxcode/f-app", "@fxcode/f-icon",
+    "@fxcode/f-avatar", "@fxcode/f-alert", "@fxcode/f-loader", "@fxcode/f-tooltip"
+  ]
+}

@@ -72,10 +72,33 @@
 - [x] f-tooltip (Bootstrap tooltip wrapper)
 - [S] f-img, f-tab-sliding, skeleton-loader, data-not-found — deferred to Phase 2
 
-## Batch 8 — @fxcode/ui Umbrella + npm Config
-- [ ] @fxcode/ui package (re-exports all components)
-- [ ] npm publish config
-- [ ] README with usage examples
+## Batch 8 — @fxcode/ui Umbrella + npm Config ✅ COMPLETE
+- [x] @fxcode/ui package created — re-exports ALL 30 individual packages
+- [x] npm publish config (package.json with dependencies list + ng-package.json with allowedNonPeerDependencies)
+- [x] Build verified: `nx build ui` passes (31 tasks: 30 deps + 1 umbrella)
+
+---
+
+## MIGRATION COMPLETE — Phase 1
+
+Total: **26 publishable packages**, **62+ components**, all building successfully.
+
+| Category | Packages | Components |
+|----------|----------|------------|
+| Core | f-core | 6 (Device, Storage, ThemeService, AutoDestroyable, BaseInput, Types) |
+| Form Inputs | 13 packages | 13 |
+| Form Layout | f-form, f-button | 6 |
+| Layout | f-layout | 6 |
+| Table | f-table, f-data-view, f-pagination | 5 |
+| List | f-list | 7 |
+| Grid | f-grid | 4 |
+| Card | f-card | 7 |
+| Modal | f-modal | 4 |
+| App | f-app | 4 |
+| Icon | f-icon | 1 |
+| Avatar | f-avatar | 1 |
+| Utilities | f-alert, f-loader, f-tooltip | 3 |
+| **Umbrella** | **ui** | **(re-exports all)** |
 
 ## Phase 2 (later) — Advanced Components
 - [S] f-chart-* (8 chart components — needs chart.js dependency)
