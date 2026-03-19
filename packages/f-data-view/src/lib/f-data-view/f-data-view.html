@@ -1,0 +1,27 @@
+<div class="f-data-view">
+  @if (showToggle) {
+    <div class="d-flex justify-content-end mb-2">
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-outline-secondary" [class.active]="mode === 'table'" (click)="setMode('table')" title="Table view">
+          <i class="bi bi-table"></i>
+        </button>
+        <button type="button" class="btn btn-outline-secondary" [class.active]="mode === 'list'" (click)="setMode('list')" title="List view">
+          <i class="bi bi-list-ul"></i>
+        </button>
+        <button type="button" class="btn btn-outline-secondary" [class.active]="mode === 'grid'" (click)="setMode('grid')" title="Grid view">
+          <i class="bi bi-grid-3x3-gap"></i>
+        </button>
+      </div>
+    </div>
+  }
+
+  <div [class.d-none]="mode !== 'table'">
+    <ng-content select="[tableView]"></ng-content>
+  </div>
+  <div [class.d-none]="mode !== 'list'">
+    <ng-content select="[listView]"></ng-content>
+  </div>
+  <div [class.d-none]="mode !== 'grid'">
+    <ng-content select="[gridView]"></ng-content>
+  </div>
+</div>

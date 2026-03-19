@@ -50,10 +50,10 @@
 - [x] [I] f-layout (FRow, FCol, FHeader, FBody, FSection, FContainer — all inline templates, computed colClasses)
 - [x] All 3 packages build verified
 
-## Batch 4 — Table + Data View (3)
-- [ ] f-table (includes f-table-responsive, f-table-default, f-table-dynamic)
-- [ ] f-data-view (triple view: table/list/grid toggle)
-- [ ] table-pagination
+## Batch 4 — Table + Data View (3) ✅ COMPLETE
+- [x] [I] f-table (FTableResponsive, FTableDefault, FTableScrollable — sticky left/right columns with scroll shadows)
+- [x] f-data-view (triple view toggle: table/list/grid, auto-switch to list on mobile)
+- [x] [I] f-pagination (page buttons, size selector, showing X-Y of Z — rewritten from scratch, Bootstrap pagination)
 
 ## Batch 5 — List + Grid + Card (17)
 - [ ] f-list (includes f-list-item, f-list-title, etc.)

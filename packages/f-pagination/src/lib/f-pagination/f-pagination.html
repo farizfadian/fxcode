@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-between align-items-center flex-wrap">
+  <div class="text-muted small">
+    Showing {{ ((page - 1) * size) + 1 }}-{{ page * size > totalElements ? totalElements : page * size }} of {{ totalElements }}
+  </div>
+
+  <nav>
+    <ul class="pagination pagination-sm mb-0">
+      <li class="page-item" [class.disabled]="page === 1">
+        <a class="page-link" (click)="goToPage(1)">&laquo;</a>
+      </li>
+      <li class="page-item" [class.disabled]="page === 1">
+        <a class="page-link" (click)="goToPage(page - 1)">&lsaquo;</a>
+      </li>
+      @for (p of pages; track p) {
+        <li class="page-item" [class.active]="p === page">
+          <a class="page-link" (click)="goToPage(p)">{{ p }}</a>
+        </li>
+      }
+      <li class="page-item" [class.disabled]="page === totalPages">
+        <a class="page-link" (click)="goToPage(page + 1)">&rsaquo;</a>
+      </li>
+      <li class="page-item" [class.disabled]="page === totalPages">
+        <a class="page-link" (click)="goToPage(totalPages)">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div>
+    <select class="form-control form-control-sm d-inline-block" style="width: auto;" (change)="onSizeChange(+$any($event.target).value)">
+      @for (s of pageSizes; track s) {
+        <option [value]="s" [selected]="s === size">{{ s }}</option>
+      }
+    </select>
+    <span class="text-muted small ml-1">rows</span>
+  </div>
+</div>

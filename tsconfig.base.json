@@ -32,7 +32,10 @@
       "@fxcode/f-input-money": ["packages/f-input-money/src/index.ts"],
       "@fxcode/f-form": ["packages/f-form/src/index.ts"],
       "@fxcode/f-button": ["packages/f-button/src/index.ts"],
-      "@fxcode/f-layout": ["packages/f-layout/src/index.ts"]
+      "@fxcode/f-layout": ["packages/f-layout/src/index.ts"],
+      "@fxcode/f-table": ["packages/f-table/src/index.ts"],
+      "@fxcode/f-data-view": ["packages/f-data-view/src/index.ts"],
+      "@fxcode/f-pagination": ["packages/f-pagination/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
